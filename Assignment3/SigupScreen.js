@@ -1,22 +1,13 @@
 import {  StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function SignupScreen({navigation}) {
     const [UserName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const StoreRegister = async()=>{
-        try{
-            const user_={nam:UserName,email1:email,pass:password};
-            const user_2=JSON.stringify(user_);
-        await AsyncStorage.setItem(email,user_2);
-        navigation.navigate('Login')
-        }catch(e){
-            console.log(e)
-        }
-    }
+
 
     return (
             <View style={styles.container}>
