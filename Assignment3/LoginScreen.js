@@ -10,7 +10,6 @@ import {
     TouchableOpacity,
     Alert,
 } from "react-native";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 const nam = '';
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -18,12 +17,7 @@ export default function LoginScreen({ navigation }) {
 
     
     
-    const GetEmailPass = async () => {
-
-        const getemail = await AsyncStorage.getItem(email);
-        var obj = JSON.parse(getemail);
-       
-         console.log(obj.nam);
+   
 
 
           
@@ -40,7 +34,7 @@ export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
-                {/* <Image style={styles.image} source={require("../assets/DesgnPicture/dlogo2.jpg")} /> */}
+                
             </View>
             <StatusBar style="auto" />
             <View style={styles.inputView}>
